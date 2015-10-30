@@ -30,7 +30,7 @@ input[type=text] {
 
 .headshot {
     max-width: 50px;
-    border: 2px solid red;
+    border: 1px solid #808080;
     padding: 3px;
 }
 
@@ -40,10 +40,13 @@ input[type=text] {
 
 .menu li {
     list-style-type: none;
+    color: #eee;
+    
 }
 
 .menu li.active {
     font-weight: bold;
+    color: #eee;
 }
 
 #sidebar {
