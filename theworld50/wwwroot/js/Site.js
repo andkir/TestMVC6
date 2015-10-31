@@ -20,13 +20,16 @@
     });*/
 
     var $divs = $("#sidebar, #wrapper");
+    var $toggleStyle = $("#togleSidebar i.fa");
     $("#togleSidebar").on("click", function() {
         $divs.toggleClass('hideSidebar');
         if($divs.hasClass("hideSidebar"))
         {
-            $(this).text("Show menu");
+            $toggleStyle.addClass('fa-chevron-right');
+            $toggleStyle.removeClass('fa-chevron-left');
         } else {
-            $(this).text("Hide menu");
+            $toggleStyle.addClass('fa-chevron-left');
+            $toggleStyle.removeClass('fa-chevron-right');
         }
     });
 })();
