@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNet.Mvc;
+﻿using System.Linq;
+using Microsoft.AspNet.Mvc;
+using theworld50.Models;
 using theworld50.ViewModels;
 using theworld50.Services;
 
@@ -8,17 +10,21 @@ namespace theworld50.Controllers.Web
 {
     public class AppController : Controller
     {
-        private IMailService mailService;
+        private readonly IMailService mailService;
+        private readonly IWorldRepository repository;
 
-        public AppController(IMailService mailService)
+        public AppController(IMailService mailService, IWorldRepository repository)
         {
             this.mailService = mailService;
+            this.repository = repository;
         }
 
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            var trips = repository.GetAllTrips();
+
+            return View(trips);
         }
 
         public IActionResult About()
