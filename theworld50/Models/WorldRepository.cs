@@ -55,7 +55,7 @@ namespace theworld50.Models
         public void AddStop(string tripName, Stop newStop)
         {
             var theTrip = GetTripByName(tripName);
-            newStop.Order = theTrip.Stops.Max(s => s.Order) + 1;
+            newStop.Order = theTrip.Stops.Any()? theTrip.Stops.Max(s => s.Order) + 1 : 1;
             theTrip.Stops.Add(newStop);
             context.Stops.Add(newStop);
         }

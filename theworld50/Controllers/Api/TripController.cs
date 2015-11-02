@@ -7,6 +7,7 @@ using AutoMapper;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Framework.Logging;
 using theworld50.Models;
+using theworld50.ViewModels;
 
 namespace theworld50.Controllers.Api
 {
@@ -29,7 +30,7 @@ namespace theworld50.Controllers.Api
         }
 
         [HttpPost("")]
-        public JsonResult Post([FromBody]TripViewModel vm)
+        public JsonResult Post([FromBody] TripViewModel vm)
         {
             try
             {
@@ -47,7 +48,7 @@ namespace theworld50.Controllers.Api
                 }
             }
             catch (Exception ex)
-            {
+            { 
                 logger.LogError("Failed to save to database new trip", ex);
                 Response.StatusCode = (int)HttpStatusCode.BadRequest;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace theworld50.Models
+namespace theworld50.ViewModels
 {
     public class StopViewModel
     {

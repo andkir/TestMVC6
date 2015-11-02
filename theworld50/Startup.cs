@@ -7,6 +7,7 @@ using Microsoft.Framework.Logging;
 using Newtonsoft.Json.Serialization;
 using theworld50.Models;
 using theworld50.Services;
+using theworld50.ViewModels;
 
 namespace theworld50
 {
@@ -39,6 +40,8 @@ namespace theworld50
             services.AddScoped<IWorldRepository, WorldRepository>();
 
             services.AddLogging();
+
+            services.AddTransient<CoordService>();
 
             services.AddEntityFramework()
                          .AddSqlServer()

@@ -8,6 +8,8 @@ using Microsoft.AspNet.Server.Kestrel;
 using Microsoft.Framework.Logging;
 using theworld50.Models;
 using System.Threading.Tasks;
+using theworld50.Services;
+using theworld50.ViewModels;
 
 namespace theworld50.Controllers.Api
 {
