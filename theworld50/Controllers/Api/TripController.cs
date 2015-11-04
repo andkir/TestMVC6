@@ -8,9 +8,11 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.Framework.Logging;
 using theworld50.Models;
 using theworld50.ViewModels;
+using Microsoft.AspNet.Authorization;
 
 namespace theworld50.Controllers.Api
 {
+    [Authorize]
     [Route("api/trips")]
     public class TripController : Controller
     {

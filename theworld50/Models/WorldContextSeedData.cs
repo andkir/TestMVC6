@@ -1,27 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 
 namespace theworld50.Models
 {
     public class WorldContextSeedData
     {
         private readonly WorldContext context;
+        private readonly UserManager<WorldUser> userManager;
 
-        public WorldContextSeedData(WorldContext context)
+        public WorldContextSeedData(WorldContext context, UserManager<WorldUser> userManager)
         {
             this.context = context;
+            this.userManager = userManager;
         }
 
-        public void EnsureSeedData()
+        public async Task EnsureSeedDataAsync()
         {
+            if (await userManager.FindByEmailAsync("ak@gmail.com") == null)
+            {
+                var worldUser = new WorldUser()
+                {
+                    UserName = "andkir",
+                    Email = "ak@gmail.com"
+                };
+
+                var result = await userManager.CreateAsync(worldUser, "P@ssw0rd");
+            }
             if (!context.Trips.Any())
             {
                 var usTrip = new Trip
                 {
                     Name = "USA trip",
                     Created = DateTime.Now,
-                    UserName = "",
+                    UserName = "andkir",
                     Stops = new List<Stop>
                     {
                         new Stop() {  Name = "Atlanta, GA", Arrived = new DateTime(2014, 6, 4), Latitude = 33.748995, Longitude = -84.387982, Order = 0 },
@@ -40,7 +54,7 @@ namespace theworld50.Models
                 {
                     Name = "World Trip",
                     Created = DateTime.UtcNow,
-                    UserName = "",
+                    UserName = "andkir",
                     Stops = new List<Stop>()
                     {
                         new Stop()

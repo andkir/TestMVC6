@@ -8,6 +8,12 @@ using Newtonsoft.Json.Serialization;
 using theworld50.Models;
 using theworld50.Services;
 using theworld50.ViewModels;
+using Microsoft.AspNet.Authentication.Cookies;
+using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.Http;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace theworld50
 {
@@ -34,6 +40,18 @@ namespace theworld50
                     opt.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 });
 
+            services.AddIdentity<WorldUser, IdentityRole>(config =>
+            {
+                config.User.RequireUniqueEmail = true;
+                config.Password.RequiredLength = 8;
+            })
+            .AddEntityFrameworkStores<WorldContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Cookies.ApplicationCookie.LoginPath = new Microsoft.AspNet.Http.PathString("/Auth/Login");
+            });
+
             services.AddScoped<IMailService, DebugMailService>();
 
             services.AddTransient<WorldContextSeedData>();
@@ -48,7 +66,7 @@ namespace theworld50
                          .AddDbContext<WorldContext>();
         }
 
-        public void Configure(IApplicationBuilder app, WorldContextSeedData wcSeedData, ILoggerFactory loggerFactory)
+        public async void Configure(IApplicationBuilder app, WorldContextSeedData wcSeedData, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddDebug(LogLevel.Debug);
 
@@ -59,12 +77,15 @@ namespace theworld50
             });
 
             app.UseStaticFiles();
+
+            app.UseIdentity();
+
             // Add the platform handler to the request pipeline.
             app.UseIISPlatformHandler();
 
             app.UseMvc(config => config.MapRoute("Default", "{controller}/{action}/{id?}", new {controller = "App", action = "Index"}));
 
-            wcSeedData.EnsureSeedData();
+            await wcSeedData.EnsureSeedDataAsync();
         }
     }
 }

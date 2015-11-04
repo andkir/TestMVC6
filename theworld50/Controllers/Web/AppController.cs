@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Mvc;
 using theworld50.Models;
 using theworld50.ViewModels;
@@ -21,6 +22,14 @@ namespace theworld50.Controllers.Web
 
         // GET: /<controller>/
         public IActionResult Index()
+        {
+            var trips = repository.GetAllTrips();
+
+            return View(trips);
+        }
+
+        [Authorize()]
+        public IActionResult Trips()
         {
             var trips = repository.GetAllTrips();
 
