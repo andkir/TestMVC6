@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Framework.Logging;
@@ -40,6 +38,7 @@ namespace theworld50.Controllers.Api
                 {
                     logger.LogInformation("Trying to save new trip");
                     var newTrip = Mapper.Map<Trip>(vm);
+                    newTrip.UserName = Request.HttpContext.User.Identity.Name;
                     repository.AddTrip(newTrip);
 
                     if (repository.SaveAll())

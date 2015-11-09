@@ -52,6 +52,7 @@ namespace theworld50.Controllers.Api
 
         public async Task<JsonResult> Post(string tripName, [FromBody]StopViewModel vm)
         {
+            tripName = Uri.UnescapeDataString(tripName);
             try
             {
                 if (ModelState.IsValid)
