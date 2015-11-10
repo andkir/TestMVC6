@@ -14,6 +14,7 @@ using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Diagnostics;
 
 namespace theworld50
 {
@@ -66,7 +67,7 @@ namespace theworld50
                          .AddDbContext<WorldContext>();
         }
 
-        public async void Configure(IApplicationBuilder app, WorldContextSeedData wcSeedData, ILoggerFactory loggerFactory)
+        public async void Configure(IApplicationBuilder app, IHostingEnvironment env, WorldContextSeedData wcSeedData, ILoggerFactory loggerFactory)
         {
             loggerFactory.AddDebug(LogLevel.Debug);
 
@@ -75,6 +76,12 @@ namespace theworld50
                 config.CreateMap<Trip, TripViewModel>().ReverseMap();
                 config.CreateMap<Stop, StopViewModel>().ReverseMap();
             });
+
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+                app.UseRuntimeInfoPage(); // default path is /runtimeinfo
+            }
 
             app.UseStaticFiles();
 

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Mvc;
 using theworld50.Models;
@@ -42,6 +43,7 @@ namespace theworld50.Controllers.Web
         
         public IActionResult Contact()
         {
+            //throw new Exception();
             return View();
         }
 
