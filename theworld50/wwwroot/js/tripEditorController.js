@@ -30,7 +30,7 @@
             .then(function (response) {
                  vm.stops.push(response.data);
                  _showMap(vm.stops);
-                 vm.newStop = {};
+                 vm.newStop.name = {};
             },
             function () {
                 vm.errorMessage = "Fail to add new stops for trip.";
