@@ -90,7 +90,7 @@ namespace theworld50
             // Add the platform handler to the request pipeline.
             app.UseIISPlatformHandler();
 
-            app.UseMvc(config => config.MapRoute("Default", "{controller}/{action}/{id?}", new {controller = "App", action = "Index"}));
+            app.UseMvc(config => config.MapRoute("Default", "{controller=App}/{action=Index}/{id?}"));
 
             await wcSeedData.EnsureSeedDataAsync();
         }
