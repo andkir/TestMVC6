@@ -27,7 +27,8 @@ namespace theworld50
             var builder = new ConfigurationBuilder()
                             .SetBasePath(app.ApplicationBasePath)
                             .AddEnvironmentVariables()
-                            .AddJsonFile("config.json");
+                            .AddJsonFile("config.json")
+                            .AddUserSecrets();
 
             Configuration = builder.Build();
         }
@@ -69,6 +70,8 @@ namespace theworld50
 
         public async void Configure(IApplicationBuilder app, IHostingEnvironment env, WorldContextSeedData wcSeedData, ILoggerFactory loggerFactory)
         {
+
+            var password = Configuration.Get<string>("password");
             loggerFactory.AddDebug(LogLevel.Debug);
 
             Mapper.Initialize(config =>
@@ -81,6 +84,8 @@ namespace theworld50
             {
                 app.UseDeveloperExceptionPage();
                 app.UseRuntimeInfoPage(); // default path is /runtimeinfo
+                app.UseExceptionHandler("/app/error");
+
             }
 
             app.UseStaticFiles();

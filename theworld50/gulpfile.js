@@ -5,6 +5,7 @@ Click here to learn more. http://go.microsoft.com/fwlink/?LinkId=518007
 
 var gulp = require('gulp');
 var less = require('gulp-less');
+var uglify = require('gulp-uglify');
 
 var paths = {
     src: "./Assets/**/*.js",
@@ -27,4 +28,10 @@ gulp.task('default', function () {
         gulp.src('./wwwroot/css/*.less')
             .pipe(less())
             .pipe(gulp.dest('./wwwroot/' + 'css'));
+    });
+
+    gulp.task('minify', function () {
+        gulp.src('./wwwroot/js/*.js')
+            .pipe(uglify())
+            .pipe(gulp.dest('./wwwroot/lib/myjs'));
     });

@@ -40,7 +40,17 @@ namespace theworld50.Controllers.Web
             return View();
         }
 
-        
+        public IActionResult Error()
+        {
+            return View("_Error");
+        }
+
+        public IActionResult MakeError()
+        {
+            throw new Exception("error");
+            return View();
+        }
+
         public IActionResult Contact()
         {
             //throw new Exception();

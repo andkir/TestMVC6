@@ -3,24 +3,25 @@
     "webroot": "wwwroot",
     "version": "1.0.0-*",
 
-  "dependencies": {
-    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
-    "Microsoft.AspNet.Mvc": "6.0.0-beta8",
-    "Microsoft.AspNet.Mvc.ViewFeatures": "6.0.0-beta8",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-beta8",
-    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta8",
-    "EntityFramework.Core": "7.0.0-beta8",
-    "EntityFramework.SqlServer": "7.0.0-beta8",
-    "EntityFramework.Commands": "7.0.0-beta8",
-    "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
-    "AutoMapper": "4.1.1",
-    "System.Net.Http": "4.0.1-beta-23225",
-    "Microsoft.AspNet.Identity": "3.0.0-beta8",
-    "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
-    "AngularJS.Intellisense": "1.0.3",
-    "Microsoft.AspNet.Diagnostics": "1.0.0-beta8"
-  },
+    "dependencies": {
+        "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
+        "Microsoft.AspNet.Mvc": "6.0.0-beta8",
+        "Microsoft.AspNet.Mvc.ViewFeatures": "6.0.0-beta8",
+        "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-beta8",
+        "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta8",
+        "EntityFramework.Core": "7.0.0-beta8",
+        "EntityFramework.SqlServer": "7.0.0-beta8",
+        "EntityFramework.Commands": "7.0.0-beta8",
+        "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
+        "AutoMapper": "4.1.1",
+        "System.Net.Http": "4.0.1-beta-23225",
+        "Microsoft.AspNet.Identity": "3.0.0-beta8",
+        "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta8",
+        "AngularJS.Intellisense": "1.0.3",
+        "Microsoft.AspNet.Diagnostics": "1.0.0-beta8",
+        "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta8"
+    },
 
     "commands": {
       "web": "Microsoft.AspNet.Server.Kestrel",
