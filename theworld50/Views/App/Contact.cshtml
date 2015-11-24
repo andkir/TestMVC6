@@ -8,7 +8,7 @@
     <div class="col-md-4">
 
 
-        <form method="post">
+        @*<form method="post">
             @if (ViewBag.Message != null)
             {
                 <div>@ViewBag.Message</div>
@@ -35,15 +35,36 @@
                 <a class="btn btn-default" asp-controller="App" asp-action="Index">Cancel</a>
                 <input type="submit" value="Send Message" class="btn btn-success" />
             </div>
-        </form>
+        </form>*@
     </div>
 
     <div class="col-md-4 ">
-
-    </div>
+        <form method="post" id="messageForm">
+            <div class="form-group">
+                <label>Message1</label>
+                <input class="form-control" id="message"/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Message" class="btn btn-success" />
+            </div>
+        </form>
+        <div>
+            <span id="MessageList"></span>
+        </div>
+</div>
 </div>
 
 @section Scripts {
+    <script>
+    $("#messageForm").submit(function() {
+        $.post('/App/AddMessage', { message: $('#message').val() })
+            .done(function(response) {
+                $("#MessageList").html($("#MessageList").html() + '<br/>' + response);
+            });
+        return false;
+    });
+</script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script type="text/javascript" src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 }

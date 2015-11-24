@@ -83,8 +83,8 @@ namespace theworld50
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseRuntimeInfoPage(); // default path is /runtimeinfo
-                app.UseExceptionHandler("/app/error");
+              //  app.UseRuntimeInfoPage(); // default path is /runtimeinfo
+              //  app.UseExceptionHandler("/app/error");
 
             }
 

@@ -57,8 +57,8 @@ namespace theworld50.Controllers.Web
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Contact(ContactViewModel model)
+      //  [HttpPost]
+        public IActionResult Contact1(ContactViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -78,6 +78,12 @@ namespace theworld50.Controllers.Web
             }
 
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddMessage(string message)
+        {
+            return Json(message);
         }
     }
 }
