@@ -57,7 +57,7 @@ namespace theworld50.Controllers.Web
             return View();
         }
 
-      //  [HttpPost]
+        [HttpPost]
         public IActionResult Contact1(ContactViewModel model)
         {
             if (ModelState.IsValid)
