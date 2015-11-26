@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201511261453435_AddFree.Designer.cs">
       <DependentUpon>201511261453435_AddFree.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511261544111_RequiredName.cs" />
+    <Compile Include="Migrations\201511261544111_RequiredName.Designer.cs">
+      <DependentUpon>201511261544111_RequiredName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SportActivity.cs" />
     <Compile Include="EfTestContext.cs" />
@@ -73,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511261453435_AddFree.resx">
       <DependentUpon>201511261453435_AddFree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511261544111_RequiredName.resx">
+      <DependentUpon>201511261544111_RequiredName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
