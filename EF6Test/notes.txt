@@ -1,0 +1,6 @@
+1. Disconnected state, attach, state. Entry method
+2. Find method. db hit
+3. sqlQuery method
+4. ExecuteSqlQuery method
+5. Include and Load methods
+6. virtual and lazy loading
