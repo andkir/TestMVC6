@@ -10,6 +10,7 @@ namespace EF6Test.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(EF6Test.EfTestContext context)
