@@ -14,6 +14,7 @@ namespace EF6Test.Migrations
 
         protected override void Seed(EF6Test.EfTestContext context)
         {
+            context.SportActivities.Add(new SportActivity() {Free = false, Name = "Swimming"});
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
