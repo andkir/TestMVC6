@@ -8,7 +8,9 @@ public class Program
         Console.ReadLine();
 
         var ctx = new EF6Test.EfTestContext();
-        ctx.Database.Initialize(true);
+        var t = ctx.GetFreeSportActivities();
+
+
         Console.ReadLine();
     }
 }
