@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootswatch/yeti/bootstrap.min.css" />
     <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="~/css/Site.css" />
-
+    @RenderSection("css", false)
 </head>
 <body>
 <div id="sidebar">
@@ -20,6 +20,7 @@
         <li class="active"><a asp-controller="App" asp-action="Index">Home</a></li>
         <li><a asp-controller="App" asp-action="About">About</a></li>
         <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+        <li><a asp-controller="App" asp-action="AngularTestPage">AngularJS Test Page</a></li>
         @if (User.Identity.IsAuthenticated)
         {
             <li><a asp-controller="App" asp-action="Trips">Trips</a></li>

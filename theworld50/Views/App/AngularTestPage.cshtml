@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "AngularJS Test Page";
+}
+
+<div class="row" ng-app="Myapp">
+    <div ng-view class="main">
+
+
+
+    </div>
+</div>
+
+@section Scripts{
+    <script type="text/javascript" src="~/lib/angularjs/angular.min.js"></script>
+    <script type="text/javascript" src="~/lib/angular-route/angular-route.min.js"></script>
+    <script src="~/js/myapp.js"></script>
+    <script src="~/js/Controllers.js"></script>
+}@section css{
+    <link href="~/css/style.css" rel="stylesheet" />
+}

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Mvc;
+using Newtonsoft.Json;
 using theworld50.Models;
 using theworld50.ViewModels;
 using theworld50.Services;
@@ -55,6 +57,15 @@ namespace theworld50.Controllers.Web
         {
             //throw new Exception();
             return View();
+        }
+        public IActionResult AngularTestPage()
+        {
+            return View();
+        }
+
+        public IActionResult Data()
+        {
+            return Json(JsonConvert.DeserializeObject(System.IO.File.ReadAllText("data/data.json")));
         }
 
         [HttpPost]
