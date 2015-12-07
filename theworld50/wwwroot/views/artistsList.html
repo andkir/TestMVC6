@@ -1,4 +1,4 @@
-﻿<section >
+﻿<section class="artistpage">
     <div class="search">
         <h1>Artist Directory</h1>
         <label>search:</label>
@@ -17,8 +17,8 @@
             descending<input type="radio" ng-model="direction" name="direction" value="reversed" />
         </label>
     </div>
-    <ul class="artistlist">
-        <li class="artist cf" ng-repeat="item in vm.artists | filter:query | orderBy: vm.artistOrder:direction">
+    <ul class="artistlist" ng-show="query">
+        <li ng-animate="'animate'" class="artist cf" ng-repeat="item in vm.artists | filter:query | orderBy: vm.artistOrder:direction">
             <a href="#/details/{{vm.artists.indexOf(item)}}">
                 <img src="/img/tn/{{item.shortname}}_tn.jpg" />
                 <div class="info">
