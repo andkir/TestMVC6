@@ -9,6 +9,10 @@ namespace EF6Test
 {
     public class EfTestContext : DbContext
     {
+        public EfTestContext()
+        {
+        }
+
         public DbSet<SportComplex> SportComplexes { get; set; }
         public DbSet<SportActivity> SportActivities { get; set; }
 

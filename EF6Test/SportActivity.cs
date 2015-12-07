@@ -13,5 +13,15 @@ namespace EF6Test
         [Required]
         public string Name { get; set; }
         public bool Free { get; set; }
+        public MyEnum MyPropertyEnum { get; set; }
+
+    }
+
+    [Flags]
+    public enum MyEnum
+    {
+        qwe,
+        asd,
+        zxc
     }
 }

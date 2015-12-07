@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201511261544111_RequiredName.Designer.cs">
       <DependentUpon>201511261544111_RequiredName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512031355031_enum.cs" />
+    <Compile Include="Migrations\201512031355031_enum.Designer.cs">
+      <DependentUpon>201512031355031_enum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="SportActivity.cs" />
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511261544111_RequiredName.resx">
       <DependentUpon>201511261544111_RequiredName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512031355031_enum.resx">
+      <DependentUpon>201512031355031_enum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
