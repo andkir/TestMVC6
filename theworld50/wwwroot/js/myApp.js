@@ -19,4 +19,4 @@ MyApp.config([
                 redirectTo: '/list'
             });
     }
-]);
+]); 
