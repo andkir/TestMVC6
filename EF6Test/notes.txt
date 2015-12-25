@@ -1,0 +1,4 @@
+1. when auto merge and no conflicts commit also happens
+2. checkout also reverts local not commited(unstage) changes on modified files (-- for files not branches)
+3. we can change only last commit only if no any refferes to it. for that we can use -amend param. 
+4. 
