@@ -15,6 +15,7 @@ namespace EF6Test
         public bool Free { get; set; }
         public MyEnum MyPropertyEnum { get; set; }
 
+        public string NewProp { get; set; }
     }
 
     [Flags]

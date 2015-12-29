@@ -1,9 +1,6 @@
-1. when auto merge and no conflicts commit also happens
-2. checkout also reverts local not commited(unstage) changes on modified files (-- for files not branches)
-3. we can change only last commit only if no any refferes to it. for that we can use -amend param. 
-4. checkout can also tkae changes from older commit(should specify hash of that particular commit)
-5. revert cmd  - checkouts the specific version(as param) and tryies to make commit at once
-6. reset command for moving head pointer for branch
-7. soft reset  - most recent commits after specified commit go to stage state. 
-8. mixed(default) reset  - most recent commits after specified commit go to unstage state. 
-9. hard reset  - most recent commits after specified commit go to hell(cleared). but we can go back to latest commit again using hash commit
+1. delete db
+2. uncomment line in constructor. or add custom init in global.asax
+3. run web site.
+
+4. move seed method to migration configuration
+5. use dbconfiguration class
